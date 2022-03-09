@@ -10,6 +10,7 @@ screen_width = 840
 screen_height = 566
 screen = pg.display.set_mode([screen_width, screen_height])
 zastavka = pg.image.load('zastavka2.jpg').convert()
+start = pg.image.load('start.png').convert_alpha()
 
 clock = pg.time.Clock()
 FPS = 120
@@ -47,3 +48,16 @@ def update_ck_1():
     nadpis_text(50, i, x, messeg, messeg1)
     #screen.blit(zastavka, (0, 0))
     pg.display.update()
+    z = 0
+    while z == 0:
+
+        for q in pg.event.get():
+            screen.blit(start, (100, 400))
+            pg.display.update()
+            if q.type == pg.MOUSEBUTTONDOWN:
+                print(q)
+                if q.button == 1:
+                    print('-----')
+                    pg.quit()
+                    sys.exit()
+                    z += 1

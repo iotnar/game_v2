@@ -23,9 +23,8 @@ centr_x_s = screen_width/2-50
 centr_y_s = screen_height/2-25
 
 def update_zagruzka(i, count):
-        print(i)
-        if i < 100:
-            if count <= 100:
+       while i <= 100:
+          if count <= 100:
                 r = randint(1, 3)
                 text = f.render((str(count)+' %'), True, (49, 168, 77))
                 screen.blit(text, (centr_x_s, centr_y_s))
@@ -36,13 +35,11 @@ def update_zagruzka(i, count):
                 i+= 1
                 count += r
                 pg.time.wait(60)
-            else:
+          else:
+             i = 110
              screen.blit(f.render('100 %', True, (49, 168, 77)), (centr_x_s, centr_y_s))
              pg.display.update()
              pg.time.wait(600)
              screen.blit(zastavka, (0, 0))
              pg.display.update()
              first.update_ck_1()
-
-
-
