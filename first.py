@@ -46,6 +46,7 @@ def nadpis_text(y, i, x, messeg,messeg1):
 def update_ck_1():
     color1 = (49, 168, 77)
     color2 = (255, 177, 70)
+
     a = color1
     b = color2
     i = 0

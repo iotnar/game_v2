@@ -42,4 +42,4 @@ def update_zagruzka(i, count):
              pg.time.wait(600)
              screen.blit(zastavka, (0, 0))
              pg.display.update()
-             first.update_ck_1()
+

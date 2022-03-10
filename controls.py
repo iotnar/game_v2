@@ -56,11 +56,12 @@ def update_bullets(screen, bullets, inos, vzruv):
             bullets.remove(bullet)
 
     if pygame.sprite.groupcollide(bullets, inos, True, True):
-        #x = self.ino.x             #разобраться не работает нужно получить координаты взрыва
-       # y = self.ino.y
+        #x = self.inos.x             #разобраться не работает нужно получить координаты взрыва
+        #y = self.inos.y
         vzruv.play()
-        pygame.draw.circle(screen, (200, 200, 100), (10, 10), 10)
+        pygame.draw.circle(screen, (200, 200, 100), (100, 100), 50)
         pygame.display.flip()
+        pygame.time.wait(60)
 
 
 def update_inos(inos):

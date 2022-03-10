@@ -5,13 +5,24 @@ import pygame as pg
 import first
 import zagruzka
 import end
-import game
+import ggg
 
+pg.init()
 
+screen_width = 840
+screen_height = 566
+screen = pg.display.set_mode([screen_width, screen_height])
+zastavka = pg.image.load('zastavka2.jpg').convert()
+screen.blit(zastavka, (0, 0))
+pg.display.update()
 
 def run():
-    zagruzka.update_zagruzka(1, 0)
-    print('яяяяя111')
+    while True:
+        ggg.run_game(screen)
+       # zagruzka.update_zagruzka(1, 0)
+        print('яяяяя111')
+        first.update_ck_1()
+
 
 
 
