@@ -2,7 +2,7 @@
 import os, sys
 import pygame as pg
 import end
-
+import ggg
 
 pg.init()
 
@@ -91,10 +91,11 @@ def update_ck_1():
                     b = color2
 
                     pg.display.update
-                if q.key == pg.K_SPACE and a == color1:
+                if q.key == pg.K_SPACE and a == color2:
                     print('stop')#sys.exit()
+                    ggg.run_game(screen)
 
-                elif q.key == pg.K_SPACE and a == color2:
+                elif q.key == pg.K_SPACE and a == color1:
                     print('start')
                     end.off()
 

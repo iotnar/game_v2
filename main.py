@@ -8,6 +8,7 @@ import end
 import game
 
 
+
 def run():
     zagruzka.update_zagruzka(1, 0)
     print('яяяяя111')
@@ -29,4 +30,3 @@ pg.init()
 
 
 run()
-end.off()
