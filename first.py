@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import os, sys
 import pygame as pg
-import sys
+import end
 
 
 pg.init()
@@ -27,10 +27,8 @@ class Button(pg.sprite.Sprite):
     def output(self,x, y):
         """отрисовка кнопки"""
         self.screen.blit(self.text, (x, y))
-color1 = (49, 168, 77)
-color2 = (255, 177, 70)
-button1 = Button(screen,'START GAME', color1)
-button2 = Button(screen,'QUIT GAME', color2)
+
+
 
 def nadpis_text(y, i, x, messeg,messeg1):
    while i < int(len(messeg)):
@@ -46,6 +44,10 @@ def nadpis_text(y, i, x, messeg,messeg1):
                 x += 13
 
 def update_ck_1():
+    color1 = (49, 168, 77)
+    color2 = (255, 177, 70)
+    a = color1
+    b = color2
     i = 0
     x = 13
     f = pg.font.Font('D3Digitalism-BWwG.ttf', 15)
@@ -65,18 +67,34 @@ def update_ck_1():
     pg.display.update()
     z = 0
     while z == 0:
+        button1 = Button(screen, 'START GAME', a)
+        button2 = Button(screen, 'QUIT GAME', b)
 
         for q in pg.event.get():
             if q.type == pg.QUIT:
                 sys.exit()
+
             button1.output(100, 400)
             button2.output(400, 400)
             #screen.blit(start, (100, 400))
             pg.display.update()
+
             if q.type == pg.KEYDOWN:
                 if q.key == pg.K_a:
+                    a = color2
+                    b = color1
 
                     pg.display.update
 
+                if q.key == pg.K_d:
+                    a = color1
+                    b = color2
 
+                    pg.display.update
+                if q.key == pg.K_SPACE and a == color1:
+                    print('stop')#sys.exit()
+
+                elif q.key == pg.K_SPACE and a == color2:
+                    print('start')
+                    end.off()
 

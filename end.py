@@ -9,7 +9,7 @@ pg.init()
 screen_width = 840
 screen_height = 566
 screen = pg.display.set_mode([screen_width, screen_height])
-zastavka = pg.image.load('zastavka2.jpg').convert()
+zastavka = pg.image.load('zastavka_end.jpg').convert()
 clock = pg.time.Clock()
 def off():
     screen.blit(zastavka, (0, 0))
