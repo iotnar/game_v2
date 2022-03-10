@@ -4,9 +4,11 @@ import sys
 from bullet import Bullet
 from ino import Ino
 
-def update_first(screen):
 
-    screen.fill(0, 0, 0)
+
+#def update_first(screen):
+
+    #screen.fill(0, 0, 0)
 
 def events(screen, gun, bullets, gun_shot):
     """обработка событий"""
@@ -56,12 +58,8 @@ def update_bullets(screen, bullets, inos, vzruv):
             bullets.remove(bullet)
 
     if pygame.sprite.groupcollide(bullets, inos, True, True):
-        #x = self.inos.x             #разобраться не работает нужно получить координаты взрыва
-        #y = self.inos.y
         vzruv.play()
-        pygame.draw.circle(screen, (200, 200, 100), (100, 100), 50)
-        pygame.display.flip()
-        pygame.time.wait(60)
+
 
 
 def update_inos(inos):

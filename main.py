@@ -7,6 +7,9 @@ import zagruzka
 import end
 import ggg
 
+pg.mixer.pre_init(44100, -16, 2, 512)
+pg.mixer.music.load('elektro.wav')
+
 pg.init()
 
 screen_width = 840
@@ -18,17 +21,16 @@ pg.display.update()
 
 def run():
     while True:
-        ggg.run_game(screen)
-       # zagruzka.update_zagruzka(1, 0)
+
+        zagruzka.update_zagruzka(1, 0)
         print('яяяяя111')
         first.update_ck_1()
-
+        ggg.run_game(screen)
 
 
 
 """загрузка музыки"""
-pg.mixer.pre_init(44100, -16, 2, 512)
-pg.mixer.music.load('elektro.wav')
+
 #pg.mixer.music.play()
 #zag = pg.mixer.Sound('vkluchenie.wav')
 #klik = pg.mixer.Sound('klik.wav')
@@ -37,7 +39,7 @@ pg.mixer.music.load('elektro.wav')
 #priv3 = pg.mixer.Sound('fraza3.mp3')
 
 """экран загрузки"""
-pg.init()
+
 
 
 run()
