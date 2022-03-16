@@ -4,7 +4,7 @@ import controls
 from gun import Gun
 from pygame.sprite import Group
 from random import randint
-
+from score import Score
 
 
 
@@ -20,6 +20,7 @@ def run_game(screen):
     pygame.display.set_caption("заруба")
     clock = pygame.time.Clock()
     FPS = 120
+    score = Score(screen)
     gun = Gun(screen)
     bullets = Group()
     inos = Group()
@@ -28,8 +29,8 @@ def run_game(screen):
     while True:
         controls.events(screen, gun,  bullets, gun_shot)
         gun.updategun()
-        controls.update(zastavka, screen, gun, inos, bullets)
-        controls.update_bullets(screen, bullets, inos, vzruv)
+        controls.update(zastavka, screen, gun, inos, bullets, score)
+        controls.update_bullets(screen, bullets, inos, vzruv, score)
         controls.update_inos(inos)
         clock.tick(FPS)
 
