@@ -3,6 +3,7 @@ import pygame.mixer
 import sys
 from bullet import Bullet
 from ino import Ino
+import score
 
 def update_first(screen):
 
@@ -36,18 +37,19 @@ def events(screen, gun, bullets, gun_shot):
             elif event.key == pygame.K_a:
                 gun.mleft = False
 
-def update(image, screen, gun, inos, bullets):
+def update(image, screen, gun, inos, bullets, score):
     """обновление экрана"""
 
     screen.blit(image,(0,0))
 
     for bullet in bullets.sprites():
         bullet.draw_bullet()
+    score.draw()
     gun.output()
     inos.draw(screen)
     pygame.display.flip()
 
-def update_bullets(screen, bullets, inos, vzruv):
+def update_bullets(screen, bullets, inos, vzruv, score):
     """обновляем позиции пулек"""
 
     bullets.update()
@@ -59,9 +61,11 @@ def update_bullets(screen, bullets, inos, vzruv):
         #x = self.inos.x             #разобраться не работает нужно получить координаты взрыва
         #y = self.inos.y
         vzruv.play()
-        pygame.draw.circle(screen, (200, 200, 100), (100, 100), 50)
-        pygame.display.flip()
-        pygame.time.wait(60)
+        score.score_plus()
+
+        #pygame.draw.circle(screen, (200, 200, 100), (100, 100), 50)
+        #pygame.display.flip()
+        #pygame.time.wait(60)
 
 
 def update_inos(inos):

@@ -1,8 +1,9 @@
+# This Python file uses the following encoding: utf-8
 import pygame
 
 
 class Ino(pygame.sprite.Sprite):
-    """прише"""
+    """ пришелец """
     def __init__(self, screen):
         super(Ino, self).__init__()
         self.screen = screen

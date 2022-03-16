@@ -3,7 +3,7 @@ import controls
 from gun import Gun
 from pygame.sprite import Group
 from random import randint
-
+from score import Score
 #pygame.mixer.pre_init
 #pygame.init()
 #pygame.mixer.music.load('Wav/start_muzik.mp3')
@@ -30,15 +30,17 @@ def run_game(screen):
     gun = Gun(screen)
     bullets = Group()
     inos = Group()
+    score = Score(screen)
     controls.bild_army(screen, inos)
+
     #рисуем экран приветствия
     #controls.update_first(screen)
     #clock.tick(FPS)
     while True: # рисуем экран игры
         controls.events(screen, gun,  bullets, gun_shot)
         gun.updategun()
-        controls.update(zastavka, screen, gun, inos, bullets)
-        controls.update_bullets(screen, bullets, inos, vzruv)
+        controls.update(zastavka, screen, gun, inos, bullets, score)
+        controls.update_bullets(screen, bullets, inos, vzruv, score)
         controls.update_inos(inos)
         clock.tick(FPS)
 
